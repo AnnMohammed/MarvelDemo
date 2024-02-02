@@ -1,0 +1,48 @@
+PODS:
+  - Alamofire (5.8.1)
+  - CDAlertView (0.11.0)
+  - CleanyModal (1.0.3)
+  - MBProgressHUD (1.1.0)
+  - RxCocoa (5.1.3):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.3):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.3)
+  - SDWebImage (5.18.10):
+    - SDWebImage/Core (= 5.18.10)
+  - SDWebImage/Core (5.18.10)
+
+DEPENDENCIES:
+  - Alamofire
+  - CDAlertView
+  - CleanyModal
+  - MBProgressHUD (~> 1.1.0)
+  - RxCocoa (~> 5.1.0)
+  - RxSwift (~> 5.1.0)
+  - SDWebImage (~> 5.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - CDAlertView
+    - CleanyModal
+    - MBProgressHUD
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
+  CDAlertView: cd6624e857c85ad14560e2cd23d7eb25b983b590
+  CleanyModal: 5e5fece5b1de97b47ea091f6390ec2b16bfa2f20
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  RxCocoa: e2ed092d5432e4296aa818021d27de4090ac0354
+  RxRelay: 5a18c2eb2d68326ebaf0112f80d837ae41b92b97
+  RxSwift: 915abbdfb62214aa89ccd0b194d44fb478019b27
+  SDWebImage: fc8f2d48bbfd72ef39d70e981bd24a3f3be53fec
+
+PODFILE CHECKSUM: 4dfa2ee0c3597142078e8756d75b0fd19a7a346f
+
+COCOAPODS: 1.14.3
