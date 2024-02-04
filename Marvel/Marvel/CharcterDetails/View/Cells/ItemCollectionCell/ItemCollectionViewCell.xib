@@ -12,20 +12,25 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ItemCollectionViewCell" customModule="Marvel" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
+            <rect key="frame" x="0.0" y="0.0" width="145" height="180"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
+                <rect key="frame" x="0.0" y="0.0" width="145" height="180"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SuT-lS-8kO">
-                        <rect key="frame" x="5" y="5" width="135" height="135"/>
+                        <rect key="frame" x="0.0" y="0.0" width="145" height="180"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Aq-SD-F3z">
-                                <rect key="frame" x="0.0" y="0.0" width="135" height="99.666666666666671"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marvel" translatesAutoresizingMaskIntoConstraints="NO" id="xjL-Um-man">
+                                <rect key="frame" x="0.0" y="0.0" width="145" height="165"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XC4-ch-OKd">
-                                <rect key="frame" x="5" y="109.66666666666667" width="125" height="20.333333333333329"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yaH-sp-BvZ">
+                                <rect key="frame" x="0.0" y="175" width="145" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -33,14 +38,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="XC4-ch-OKd" secondAttribute="bottom" constant="5" id="AX2-qZ-96a"/>
-                            <constraint firstItem="XC4-ch-OKd" firstAttribute="top" secondItem="4Aq-SD-F3z" secondAttribute="bottom" constant="10" id="I5O-3p-ncL"/>
-                            <constraint firstItem="XC4-ch-OKd" firstAttribute="leading" secondItem="SuT-lS-8kO" secondAttribute="leading" constant="5" id="Pku-il-JEr"/>
-                            <constraint firstAttribute="height" constant="135" id="aW1-lQ-aYU"/>
-                            <constraint firstAttribute="trailing" secondItem="XC4-ch-OKd" secondAttribute="trailing" constant="5" id="aZF-MN-gmJ"/>
-                            <constraint firstItem="4Aq-SD-F3z" firstAttribute="top" secondItem="SuT-lS-8kO" secondAttribute="top" id="rea-AV-ZT7"/>
-                            <constraint firstItem="4Aq-SD-F3z" firstAttribute="leading" secondItem="SuT-lS-8kO" secondAttribute="leading" id="uZV-li-Abf"/>
-                            <constraint firstAttribute="trailing" secondItem="4Aq-SD-F3z" secondAttribute="trailing" id="zdR-HK-gUM"/>
+                            <constraint firstItem="yaH-sp-BvZ" firstAttribute="leading" secondItem="xjL-Um-man" secondAttribute="leading" id="1cq-zb-h9T"/>
+                            <constraint firstAttribute="trailing" secondItem="xjL-Um-man" secondAttribute="trailing" id="5Ly-EO-TTu"/>
+                            <constraint firstItem="yaH-sp-BvZ" firstAttribute="trailing" secondItem="xjL-Um-man" secondAttribute="trailing" id="8WK-Dz-2dc"/>
+                            <constraint firstAttribute="bottom" secondItem="yaH-sp-BvZ" secondAttribute="bottom" constant="5" id="kgn-6Q-Eac"/>
+                            <constraint firstItem="xjL-Um-man" firstAttribute="leading" secondItem="SuT-lS-8kO" secondAttribute="leading" id="m15-f0-g0T"/>
+                            <constraint firstItem="xjL-Um-man" firstAttribute="top" secondItem="SuT-lS-8kO" secondAttribute="top" id="pqu-Ok-tcy"/>
+                            <constraint firstItem="yaH-sp-BvZ" firstAttribute="top" secondItem="xjL-Um-man" secondAttribute="bottom" constant="10" id="vMe-lR-goA"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
@@ -64,18 +68,20 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="SuT-lS-8kO" secondAttribute="bottom" constant="5" id="GB2-Cb-3u8"/>
-                <constraint firstItem="SuT-lS-8kO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="He6-le-Ko0"/>
-                <constraint firstAttribute="trailing" secondItem="SuT-lS-8kO" secondAttribute="trailing" constant="5" id="Maf-4U-yWX"/>
-                <constraint firstItem="SuT-lS-8kO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="iTf-n3-THz"/>
+                <constraint firstAttribute="bottom" secondItem="SuT-lS-8kO" secondAttribute="bottom" id="GB2-Cb-3u8"/>
+                <constraint firstItem="SuT-lS-8kO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="He6-le-Ko0"/>
+                <constraint firstAttribute="trailing" secondItem="SuT-lS-8kO" secondAttribute="trailing" id="Maf-4U-yWX"/>
+                <constraint firstItem="SuT-lS-8kO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="iTf-n3-THz"/>
             </constraints>
             <connections>
-                <outlet property="comicNameLabel" destination="XC4-ch-OKd" id="4W0-9e-nQn"/>
+                <outlet property="comicNameLabel" destination="yaH-sp-BvZ" id="oS5-ES-mJy"/>
+                <outlet property="itemImage" destination="xjL-Um-man" id="TJP-hZ-V9c"/>
             </connections>
-            <point key="canvasLocation" x="16.030534351145036" y="19.366197183098592"/>
+            <point key="canvasLocation" x="16.030534351145036" y="19.014084507042256"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="marvel" width="639" height="360"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

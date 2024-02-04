@@ -82,7 +82,7 @@ struct Thumbnail: Codable {
 
 // MARK: - URLElement
 struct URLElement: Codable {
-    let type: URLType?
+    let type: String?
     let url: String?
 }
 

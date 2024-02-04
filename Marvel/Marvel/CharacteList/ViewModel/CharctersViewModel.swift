@@ -25,6 +25,15 @@ class CharctersViewModel {
         return charctersModelSubject
     }
     
+    //MARK:handle navigation
+    
+    let sharedViewModel = SharedViewModel()
+
+        func navigateToDestination(selectedCharacter: Resulting) {
+            sharedViewModel.selectedCharacter.accept(selectedCharacter)
+        }
+    
+    
     func getAllCharacter() {
         NetworkCall.shared.getAllCharcters() { [weak self] result in
             guard let self = self else {return}

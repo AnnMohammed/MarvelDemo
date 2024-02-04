@@ -9,6 +9,9 @@ import UIKit
 
 class ItemCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var itemImage: UIImageView!
+    
+    
     @IBOutlet weak var comicNameLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

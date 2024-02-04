@@ -13,6 +13,18 @@ import SDWebImage
 
 class CharcterDetailsViewController: UIViewController {
     
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var comicsView: UIView!
+    @IBOutlet weak var seriesView: UIView!
+    @IBOutlet weak var storiesView: UIView!
+    @IBOutlet weak var eventsView: UIView!
+    @IBOutlet weak var relatedLinksTableView: UITableView!{
+        didSet{
+            relatedLinksTableView.register(UINib(nibName: "LinksTableViewCell", bundle: nil), forCellReuseIdentifier: "LinksTableViewCell")
+            
+            
+        }
+    }
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var thumbNailPhoto: UIImageView!
@@ -39,64 +51,90 @@ class CharcterDetailsViewController: UIViewController {
     }
     
     private let disposeBag = DisposeBag()
-     var viewModel = CharcterDetailsViewModel()
+    var viewModel = CharcterDetailsViewModel()
     
+    var sharedViewModel: SharedViewModel!
     
-    var selectedCharacterComics: [ComicsItem]?
-    var selectedCharacterSerise: [ComicsItem]?
-    var selectedCharacterStories: [StoriesItem]?
-    var selectedCharacterEvents: [ComicsItem]?
-    var thumnnailImage: String?
-    var name: String?
-    var descriptionData: String?
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        suscribeToComicsImages()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setData()
-        subscribeToItems(collectionView: commicsCollectionView, items: selectedCharacterComics)
-        subscribeToItems(collectionView: seriesCollectionView, items: selectedCharacterSerise)
-        subscribeToItems(collectionView: eventsCollectionView, items: selectedCharacterEvents)
-        subscribeToStories()
+        //subscribeToComicsSelection()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        relatedLinksTableView.layoutIfNeeded()
+        tableViewHeight.constant = relatedLinksTableView.contentSize.height
+    }
+    
+    func loadImage(from path: String) -> Observable<UIImage?> {
+        guard let url = URL(string: path) else {
+            return Observable.just(nil)
+        }
+        
+        return Observable.create { observer in
+            SDWebImageManager.shared.loadImage(
+                with: url,
+                options: [],
+                progress: nil
+            ) { image, _, _, _, _, _ in
+                observer.onNext(image)
+                observer.onCompleted()
+            }
+            
+            return Disposables.create()
+        }
+    }
+    
+    func setData() {
+        sharedViewModel.selectedCharacter
+            .map { $0?.name ?? "" }
+            .bind(to: nameLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        sharedViewModel.selectedCharacter
+            .map { $0?.description ?? "" }
+            .bind(to: descriptionLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        setDataToImage()
+//        subscribeToComics()
+//        subscribeToSeries()
+//        subscribeToEvents()
+//        subscribeToStories()
+//        subscribeToLinks()
+        
+    }
+    
+    func setDataToImage() {
+        
+        sharedViewModel.selectedCharacter
+            .flatMap { selectedCharacter -> Observable<UIImage?> in
+                guard let thumbnailPath = selectedCharacter?.thumbnail?.path,
+                      let thumbnailExtension = selectedCharacter?.thumbnail?.thumbnailExtension else {
+                    return Observable.just(nil)
+                }
+                
+                let completeThumbnailPath = thumbnailPath + "." + thumbnailExtension
+                return self.loadImage(from: completeThumbnailPath)
+            }
+            .bind(to: thumbNailPhoto.rx.image)
+            .disposed(by: disposeBag)
+        
     }
     
     func setCollectionView(collectionName: UICollectionView) {
         
+        collectionName.delegate = self
+        collectionName.dataSource = self
+
         collectionName.register(UINib(nibName: "ItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ItemCollectionViewCell")
         
     }
-    
-    
-    func subscribeToItems(collectionView: UICollectionView, items: [ComicsItem]?) {
-            guard let items = items else {
-                return
-            }
-
-            Observable.just(items)
-                .bind(to: collectionView.rx.items(cellIdentifier: "ItemCollectionViewCell", cellType: ItemCollectionViewCell.self)) { row, character, cell in
-                    cell.comicNameLabel.text = character.name
-                }
-                .disposed(by: disposeBag)
-        }
-    
-    func subscribeToStories() {
-            guard let selectedCharacterStories = selectedCharacterStories else {
-                return
-            }
-
-            Observable.just(selectedCharacterStories)
-                .bind(to: storiesCollectionView.rx.items(cellIdentifier: "ItemCollectionViewCell", cellType: ItemCollectionViewCell.self)) { row, character, cell in
-                    cell.comicNameLabel.text = character.name
-                }
-                .disposed(by: disposeBag)
-        }
-    
-    func setData(){
-        
-        thumbNailPhoto.sd_setImage(with: URL(string: thumnnailImage ?? ""))
-        nameLabel.text = name
-        descriptionLabel.text = descriptionData
-    }
-    
 }

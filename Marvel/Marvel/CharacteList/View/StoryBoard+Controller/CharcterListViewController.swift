@@ -22,6 +22,13 @@ class CharcterListViewController: BaseViewConttroller {
     
     let charctersViewModel = CharctersViewModel()
     
+    
+    let sharedViewModel = SharedViewModel()
+    func navigateToDestination(selectedCharacter: Resulting) {
+           sharedViewModel.selectedCharacter.accept(selectedCharacter)
+       }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -73,10 +80,12 @@ class CharcterListViewController: BaseViewConttroller {
                 let sb = UIStoryboard(name: "CharcterDetails", bundle: nil)
                 let vc = sb.instantiateViewController(withIdentifier: "CharcterDetailsViewController") as! CharcterDetailsViewController
                 
-                
+                vc.sharedViewModel = self?.sharedViewModel
+
+                self?.navigateToDestination(selectedCharacter: charcter)
                 self?.navigationController?.pushViewController(vc, animated: true)
                 
-        }.disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
     }
     
     func getcharcters() {
@@ -86,11 +95,3 @@ class CharcterListViewController: BaseViewConttroller {
     
     
 }
-//vc.selectedCharacterComics = charcter.comics?.items
-//vc.selectedCharacterSerise = charcter.series?.items
-//vc.selectedCharacterStories = charcter.stories?.items
-//vc.selectedCharacterEvents = charcter.events?.items
-//let image = (charcter.thumbnail?.path ?? "") + "." + (charcter.thumbnail?.thumbnailExtension ?? "")
-//vc.thumnnailImage = image
-//vc.name = charcter.name
-//vc.descriptionData = charcter.description
