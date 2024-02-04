@@ -42,6 +42,8 @@ class CharcterListViewController: BaseViewConttroller {
             
         }.disposed(by: disposeBag)
         
+        subscribeToCharcterSelection()
+        
     }
     
     func setupTableView() {
@@ -63,6 +65,20 @@ class CharcterListViewController: BaseViewConttroller {
             }.disposed(by: disposeBag)
     }
     
+    func subscribeToCharcterSelection() {
+        Observable
+            .zip(charctersTableView.rx.itemSelected, charctersTableView.rx.modelSelected(Resulting.self))
+            .bind { [weak self] selectedIndex, charcter in
+                
+                let sb = UIStoryboard(name: "CharcterDetails", bundle: nil)
+                let vc = sb.instantiateViewController(withIdentifier: "CharcterDetailsViewController") as! CharcterDetailsViewController
+                
+                
+                self?.navigationController?.pushViewController(vc, animated: true)
+                
+        }.disposed(by: disposeBag)
+    }
+    
     func getcharcters() {
         charctersViewModel.getAllCharacter()
         
@@ -70,3 +86,11 @@ class CharcterListViewController: BaseViewConttroller {
     
     
 }
+//vc.selectedCharacterComics = charcter.comics?.items
+//vc.selectedCharacterSerise = charcter.series?.items
+//vc.selectedCharacterStories = charcter.stories?.items
+//vc.selectedCharacterEvents = charcter.events?.items
+//let image = (charcter.thumbnail?.path ?? "") + "." + (charcter.thumbnail?.thumbnailExtension ?? "")
+//vc.thumnnailImage = image
+//vc.name = charcter.name
+//vc.descriptionData = charcter.description
