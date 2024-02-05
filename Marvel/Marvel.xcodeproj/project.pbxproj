@@ -46,7 +46,10 @@
 		7950B6ED2B6FBB3100DE719D /* LinksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7950B6EB2B6FBB3100DE719D /* LinksTableViewCell.swift */; };
 		7950B6EE2B6FBB3100DE719D /* LinksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7950B6EC2B6FBB3100DE719D /* LinksTableViewCell.xib */; };
 		7950B6F02B6FCEDC00DE719D /* ImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7950B6EF2B6FCEDC00DE719D /* ImagesModel.swift */; };
+		795305DA2B70EE73007EB072 /* Simulator Screenshot - iPhone 14 - 2024-02-05 at 12.22.13.png in Resources */ = {isa = PBXBuildFile; fileRef = 795305D92B70EE73007EB072 /* Simulator Screenshot - iPhone 14 - 2024-02-05 at 12.22.13.png */; };
 		799552992B7014A400043043 /* CharcterDetails+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799552982B7014A400043043 /* CharcterDetails+Ex.swift */; };
+		79A2EE8A2B70E47000D453BB /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A2EE892B70E47000D453BB /* UIViewController + Extension.swift */; };
+		79A2EE8C2B70E49600D453BB /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A2EE8B2B70E49600D453BB /* CustomAlert.swift */; };
 		79E6CBCB2B70262F00DE24B7 /* Images.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79E6CBCA2B70262F00DE24B7 /* Images.storyboard */; };
 		79E6CBCD2B70264E00DE24B7 /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E6CBCC2B70264E00DE24B7 /* ImagesViewController.swift */; };
 		79E6CBD12B70269400DE24B7 /* ImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E6CBCF2B70269400DE24B7 /* ImagesCollectionViewCell.swift */; };
@@ -100,7 +103,10 @@
 		7950B6EB2B6FBB3100DE719D /* LinksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksTableViewCell.swift; sourceTree = "<group>"; };
 		7950B6EC2B6FBB3100DE719D /* LinksTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinksTableViewCell.xib; sourceTree = "<group>"; };
 		7950B6EF2B6FCEDC00DE719D /* ImagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesModel.swift; sourceTree = "<group>"; };
+		795305D92B70EE73007EB072 /* Simulator Screenshot - iPhone 14 - 2024-02-05 at 12.22.13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screenshot - iPhone 14 - 2024-02-05 at 12.22.13.png"; sourceTree = "<group>"; };
 		799552982B7014A400043043 /* CharcterDetails+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharcterDetails+Ex.swift"; sourceTree = "<group>"; };
+		79A2EE892B70E47000D453BB /* UIViewController + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		79A2EE8B2B70E49600D453BB /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		79E6CBCA2B70262F00DE24B7 /* Images.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Images.storyboard; sourceTree = "<group>"; };
 		79E6CBCC2B70264E00DE24B7 /* ImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
 		79E6CBCF2B70269400DE24B7 /* ImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 		792984102B6D1E4B00F2E469 = {
 			isa = PBXGroup;
 			children = (
+				795305D82B70EE27007EB072 /* ScreenShoots */,
 				7929841B2B6D1E4B00F2E469 /* Marvel */,
 				7929841A2B6D1E4B00F2E469 /* Products */,
 				BFB88144D2675CDFFDC1A59E /* Pods */,
@@ -232,6 +239,8 @@
 		7929843D2B6D4F6C00F2E469 /* Design */ = {
 			isa = PBXGroup;
 			children = (
+				79A2EE8B2B70E49600D453BB /* CustomAlert.swift */,
+				79A2EE892B70E47000D453BB /* UIViewController + Extension.swift */,
 				7929843E2B6D4F6C00F2E469 /* View.swift */,
 				7929843F2B6D4F6C00F2E469 /* collectionView.swift */,
 				792984402B6D4F6C00F2E469 /* UIColor.swift */,
@@ -355,6 +364,14 @@
 				7950B6EC2B6FBB3100DE719D /* LinksTableViewCell.xib */,
 			);
 			path = LinksCell;
+			sourceTree = "<group>";
+		};
+		795305D82B70EE27007EB072 /* ScreenShoots */ = {
+			isa = PBXGroup;
+			children = (
+				795305D92B70EE73007EB072 /* Simulator Screenshot - iPhone 14 - 2024-02-05 at 12.22.13.png */,
+			);
+			path = ScreenShoots;
 			sourceTree = "<group>";
 		};
 		79E6CBC52B7025F800DE24B7 /* Images */ = {
@@ -488,6 +505,7 @@
 				7950B6D92B6EA93D00DE719D /* ItemCollectionViewCell.xib in Resources */,
 				7950B6D02B6E8CFB00DE719D /* CharcterDetails.storyboard in Resources */,
 				792984242B6D1E4B00F2E469 /* Main.storyboard in Resources */,
+				795305DA2B70EE73007EB072 /* Simulator Screenshot - iPhone 14 - 2024-02-05 at 12.22.13.png in Resources */,
 				7929843B2B6D2D0400F2E469 /* CharactersTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -574,7 +592,9 @@
 				7929844E2B6D4F6C00F2E469 /* PinterestLayout.swift in Sources */,
 				7950B6F02B6FCEDC00DE719D /* ImagesModel.swift in Sources */,
 				7929841F2B6D1E4B00F2E469 /* SceneDelegate.swift in Sources */,
+				79A2EE8A2B70E47000D453BB /* UIViewController + Extension.swift in Sources */,
 				7929843A2B6D2D0400F2E469 /* CharactersTableViewCell.swift in Sources */,
+				79A2EE8C2B70E49600D453BB /* CustomAlert.swift in Sources */,
 				7929846A2B6D5E3600F2E469 /* md5.swift in Sources */,
 				792984572B6D509100F2E469 /* CharcterListViewController.swift in Sources */,
 			);

@@ -31,7 +31,7 @@ class CharcterListViewController: BaseViewConttroller {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        subscribeToLoading()
     }
     
     override func bind() {
@@ -70,6 +70,16 @@ class CharcterListViewController: BaseViewConttroller {
                 cell.yearLabel.text = "modified : " + (charcter.modified ?? "")
                 
             }.disposed(by: disposeBag)
+    }
+    
+    func subscribeToLoading() {
+        charctersViewModel.loadingBehavior.subscribe(onNext: { (isLoading) in
+            if isLoading {
+                self.showIndicator(withTitle: "", and: "")
+            } else {
+                self.hideIndicator()
+            }
+        }).disposed(by: disposeBag)
     }
     
     func subscribeToCharcterSelection() {

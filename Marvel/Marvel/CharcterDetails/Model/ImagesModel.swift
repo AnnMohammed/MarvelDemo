@@ -36,7 +36,7 @@ struct ImagesResult: Codable {
     let urls: [URLElement]?
     let series: Series?
     let variants: [Series]?
-    let collections, collectedIssues: [String]?
+    let collections, collectedIssues: [Series]?
     //let dates: [DateElement]?
     let prices: [Price]?
     let thumbnail: Thumbnail?

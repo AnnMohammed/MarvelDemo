@@ -35,9 +35,12 @@ class CharctersViewModel {
     
     
     func getAllCharacter() {
+        loadingBehavior.accept(true)
         NetworkCall.shared.getAllCharcters() { [weak self] result in
+            self?.loadingBehavior.accept(false)
             guard let self = self else {return}
             switch result {
+                
             case .success(let data):
                 if data.code == 200 {
                     

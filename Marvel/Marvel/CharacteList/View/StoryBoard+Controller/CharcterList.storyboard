@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dsl-Ob-a0p">
-                                <rect key="frame" x="10" y="108" width="373" height="40"/>
+                                <rect key="frame" x="24" y="108" width="345" height="40"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Eqm-aX-k2j">
                                         <rect key="frame" x="16" y="8.9999999999999964" width="24" height="22.333333333333329"/>
@@ -29,7 +29,7 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aCe-Su-Xw6">
-                                        <rect key="frame" x="45" y="0.0" width="308" height="40"/>
+                                        <rect key="frame" x="45" y="0.0" width="280" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -47,6 +47,18 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -103,8 +115,8 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="QSW-KD-3e5" secondAttribute="trailing" id="kDi-c4-80C"/>
                             <constraint firstItem="Dsl-Ob-a0p" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="5" id="l3r-ZB-pUE"/>
                             <constraint firstItem="QSW-KD-3e5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="l4N-DY-8Lb"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Dsl-Ob-a0p" secondAttribute="trailing" constant="10" id="lpt-vF-Cfx"/>
-                            <constraint firstItem="Dsl-Ob-a0p" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="10" id="tNQ-xP-Ro1"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Dsl-Ob-a0p" secondAttribute="trailing" constant="24" id="lpt-vF-Cfx"/>
+                            <constraint firstItem="Dsl-Ob-a0p" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="24" id="tNQ-xP-Ro1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="okn-eE-fT2"/>

@@ -12,7 +12,7 @@ import SDWebImage
 
 
 class ImagesViewController: UIViewController, UIScrollViewDelegate {
-
+    
     @IBOutlet weak var imagesCollectionView: UICollectionView!{
         didSet{
             setCollectionView()
@@ -30,7 +30,6 @@ class ImagesViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
         getData()
         subscribeToResponse()
     }
@@ -43,29 +42,37 @@ class ImagesViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func getData() {
-        
         imagesViewModel.getAllImages(url: url ?? "")
     }
     
     func subscribeToResponse() {
-        self.imagesViewModel.imagesModelObservable
-            .bind(to: self.imagesCollectionView
-                .rx
-                .items(cellIdentifier: "ImagesCollectionViewCell",
-                       cellType: ImagesCollectionViewCell.self)) { row, charcter, cell in
-                
-                let imagePath = charcter.images?[row].path
-                let imageEX = charcter.images?[row].thumbnailExtension
-                
-                let fullImage = (imagePath ?? "") + "." + (imageEX ?? "")
-                print(fullImage)
-                cell.image.sd_setImage(with: URL(string: fullImage))
-                
-            }.disposed(by: disposeBag)
+        imagesViewModel.imagesModelObservable
+            .bind(to: imagesCollectionView.rx.items(
+                cellIdentifier: "ImagesCollectionViewCell",
+                cellType: ImagesCollectionViewCell.self
+            )) { [weak self] row, character, cell in
+                if let image = character.images?[row] {
+                    let imagePath = image.path ?? ""
+                    let imageExtension = image.thumbnailExtension ?? ""
+                    let fullImage = imagePath + "." + imageExtension
+                    print(fullImage)
+                    
+                    if let imageURL = URL(string: fullImage) {
+                        cell.image.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "placeholderImage"), options: [], context: nil)
+                    } else {
+                        // Handle invalid URL case or show placeholder if needed
+                        cell.image.image = UIImage(named: "marvel")
+                    }
+                } else {
+                    // Handle nil character or image case or show placeholder if needed
+                    cell.image.image = UIImage(named: "marvel")
+                }
+            }
+            .disposed(by: disposeBag)
         
         imagesCollectionView.rx.setDelegate(self)
-                   .disposed(by: disposeBag)
-        
+            .disposed(by: disposeBag)
     }
+    
     
 }
