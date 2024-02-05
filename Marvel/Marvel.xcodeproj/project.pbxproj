@@ -46,7 +46,9 @@
 		7950B6ED2B6FBB3100DE719D /* LinksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7950B6EB2B6FBB3100DE719D /* LinksTableViewCell.swift */; };
 		7950B6EE2B6FBB3100DE719D /* LinksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7950B6EC2B6FBB3100DE719D /* LinksTableViewCell.xib */; };
 		7950B6F02B6FCEDC00DE719D /* ImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7950B6EF2B6FCEDC00DE719D /* ImagesModel.swift */; };
-		795305DA2B70EE73007EB072 /* Simulator Screenshot - iPhone 14 - 2024-02-05 at 12.22.13.png in Resources */ = {isa = PBXBuildFile; fileRef = 795305D92B70EE73007EB072 /* Simulator Screenshot - iPhone 14 - 2024-02-05 at 12.22.13.png */; };
+		795305DD2B70F019007EB072 /* third.png in Resources */ = {isa = PBXBuildFile; fileRef = 795305DB2B70F019007EB072 /* third.png */; };
+		795305DE2B70F019007EB072 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 795305DC2B70F019007EB072 /* second.png */; };
+		795305E02B70F05A007EB072 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 795305DF2B70F05A007EB072 /* first.png */; };
 		799552992B7014A400043043 /* CharcterDetails+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799552982B7014A400043043 /* CharcterDetails+Ex.swift */; };
 		79A2EE8A2B70E47000D453BB /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A2EE892B70E47000D453BB /* UIViewController + Extension.swift */; };
 		79A2EE8C2B70E49600D453BB /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A2EE8B2B70E49600D453BB /* CustomAlert.swift */; };
@@ -103,7 +105,9 @@
 		7950B6EB2B6FBB3100DE719D /* LinksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksTableViewCell.swift; sourceTree = "<group>"; };
 		7950B6EC2B6FBB3100DE719D /* LinksTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinksTableViewCell.xib; sourceTree = "<group>"; };
 		7950B6EF2B6FCEDC00DE719D /* ImagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesModel.swift; sourceTree = "<group>"; };
-		795305D92B70EE73007EB072 /* Simulator Screenshot - iPhone 14 - 2024-02-05 at 12.22.13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screenshot - iPhone 14 - 2024-02-05 at 12.22.13.png"; sourceTree = "<group>"; };
+		795305DB2B70F019007EB072 /* third.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = third.png; sourceTree = "<group>"; };
+		795305DC2B70F019007EB072 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		795305DF2B70F05A007EB072 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		799552982B7014A400043043 /* CharcterDetails+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharcterDetails+Ex.swift"; sourceTree = "<group>"; };
 		79A2EE892B70E47000D453BB /* UIViewController + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		79A2EE8B2B70E49600D453BB /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
@@ -369,7 +373,9 @@
 		795305D82B70EE27007EB072 /* ScreenShoots */ = {
 			isa = PBXGroup;
 			children = (
-				795305D92B70EE73007EB072 /* Simulator Screenshot - iPhone 14 - 2024-02-05 at 12.22.13.png */,
+				795305DF2B70F05A007EB072 /* first.png */,
+				795305DC2B70F019007EB072 /* second.png */,
+				795305DB2B70F019007EB072 /* third.png */,
 			);
 			path = ScreenShoots;
 			sourceTree = "<group>";
@@ -505,8 +511,10 @@
 				7950B6D92B6EA93D00DE719D /* ItemCollectionViewCell.xib in Resources */,
 				7950B6D02B6E8CFB00DE719D /* CharcterDetails.storyboard in Resources */,
 				792984242B6D1E4B00F2E469 /* Main.storyboard in Resources */,
-				795305DA2B70EE73007EB072 /* Simulator Screenshot - iPhone 14 - 2024-02-05 at 12.22.13.png in Resources */,
+				795305DE2B70F019007EB072 /* second.png in Resources */,
+				795305E02B70F05A007EB072 /* first.png in Resources */,
 				7929843B2B6D2D0400F2E469 /* CharactersTableViewCell.xib in Resources */,
+				795305DD2B70F019007EB072 /* third.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
